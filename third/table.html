@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테이블 박살</title>
+
+    <style>
+      table,
+      thead,
+      tbody,
+      tfoot,
+      tr,
+      th,
+      td {
+        border: 1px solid;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main></main>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="10">앞줄</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+          <td>좌석</td>
+          <td>좌석</td>
+
+          <td>좌석</td>
+          <td>좌석</td>
+          <td colspan="2" rowspan="4">좌석</td>
+          <td>좌석</td>
+          <td>좌석</td>
+          <td colspan="2" rowspan="4">좌석</td>
+          <td>좌석</td>
+          <td>좌석</td>
+        </tr>
+
+        <tr>
+          <td colspan="2" rowspan="4">좌석</td>
+          <td>좌석</td>
+          <td colspan="2" rowspan="4">좌석</td>
+          <td>좌석</td>
+          <td>좌석</td>
+          <td colspan="2" rowspan="4">좌석</td>
+          <td>좌석</td>
+          <td>좌석</td>
+          <td colspan="2" rowspan="4">좌석</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="2"></td>
+          <td colspan="6">사물함</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
