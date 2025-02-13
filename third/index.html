@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>네이버 로그인 박스</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- div:? division. 아무런 특성이 없다. -->
+    <!-- Component컴포넌트 -->
+    <div class="login-box">
+      <div>
+        <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+        <button class="btn" id="login">
+          <div>NAVER</div>
+          <div>로그인</div>
+        </button>
+        <div class="wrap">
+          <a href="" id="find_id">아이디 찾기</a>
+          <div>|</div>
+          <a href="" id="find_pw">비밀번호 찾기</a>
+          <div>|</div>
+          <a href="" id="sign_up">회원가입</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-modal">
+      <button>X</button>
+      <form action="">
+        <div>
+          <label for="email">이메일</label>
+          <input type="text" id="email" placeholder="Enter Your Email" />
+        </div>
+
+        <div>
+          <label for="password">비밀번호</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter Your Password"
+          />
+        </div>
+        <button>로그인</button>
+      </form>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -31,6 +31,7 @@ for (let i = 0; i < list.length; i++) {
   li.innerText = list[i];
 
   if (list[i] === "github") {
+    
   }
   ul.append(li);
 }
