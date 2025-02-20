@@ -1,0 +1,29 @@
+const button = document.querySelector("button");
+
+const base_url =
+  "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic";
+const key1 =
+  "MW5AXazYOfZoz46a1oVy%2FFPMg3H%2BA0o010oRwOwTSOVEyVdSSNAQ%2BZEI6PATXgaXh7GX8YR87w93PK9KBB74jw%3D%3D";
+const key2 =
+  "MW5AXazYOfZoz46a1oVy/FPMg3H+A0o010oRwOwTSOVEyVdSSNAQ+ZEI6PATXgaXh7GX8YR87w93PK9KBB74jw==";
+
+button.addEventListener("click", async () => {
+  const url = `${base_url}?serviceKey=${key1}`;
+  const res = await fetch(url);
+
+  const data = await res.text();
+  console.log(data);
+  console.log(typeof data);
+
+  const Domparser = new DOMParser();
+  const xmlDoc = Domparser.parseFromString(data, "text/xml");
+  console.log(xmlDoc);
+
+  const value = xmlDoc.getElementsByTagName("item");
+  console.log(value);
+
+  console.log(value[0]);
+
+  const name = value[0].getElementsByTagName("kindCd");
+  console.log(name.value);
+});
