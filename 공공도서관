@@ -1,0 +1,45 @@
+console.log("lib gogo");
+
+const body = document.body;
+
+const button = document.createElement("button");
+const ul = document.createElement("ul");
+
+let sopts = [];
+
+button.addEventListener("click", async () => {
+  const url =
+    "https://smart.incheon.go.kr/server/rest/services/Hosted/도서관및서점정보/FeatureServer/0/query?outFields=*&where=1%3D1&f=json";
+
+  const res = await fetch(url);
+
+  const data = await res.json();
+
+  spots = data.features;
+
+  ul.innerHTML = null;
+  spots.forEach((spot, index) => {
+    if (index < 20) {
+      const p1 = document.createElement("p");
+      const p2 = document.createElement("p");
+      const p3 = document.createElement("p");
+
+      p1.innerText = spot.attributes.이름;
+      p2.innerText = spot.attributes.상세주소;
+      p3.innerText = spot.attributes.전화번호;
+
+      const li = document.createElement("li");
+      li.addEventListener("click", () => {
+        console.log(spot);
+      });
+
+      li.append(p1, p2, p3);
+      ul.append(li);
+    }
+  });
+  body.append(ul);
+});
+
+button.innerText = "경기도 도서관 털기";
+
+body.append(button);
