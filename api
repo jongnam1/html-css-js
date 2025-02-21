@@ -1,0 +1,29 @@
+const xmlParser = async (url, itemName, targets) => {
+  if (!url) {
+    throw "no url";
+    return [];
+  }
+  if (!targets) {
+    throw "no targets";
+    return [];
+  }
+  if (!itemName) {
+    throw "no item name";
+    return [];
+  }
+  const res = await fetch(url);
+  const data = await res.text();
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(data, "text/xml");
+  const items = xml.getElementsByTagName(itemName);
+  let values = [];
+  for (let item of items) {
+    let value = {};
+    targets.forEach(
+      (target) =>
+        (value[target] = item.getElementsByTagName(target)[0].textContent)
+    );
+    values.push(value);
+  }
+  return values;
+};
