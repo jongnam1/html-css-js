@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+
+h1 {
+  padding: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: aquamarine;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  opacity: 0.5;
+  transform: scale(0.98);
+}
+
+img {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+li {
+  overflow: hidden;
+}
+li div {
+  padding: 10px;
+  font-size: 0.8rem;
+}
+
+li div:first-child {
+  padding: 0;
+  overflow: hidden;
+}
+
+li p:first-child {
+  font-size: 1rem;
+}
+
+li img:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 501px) {
+  ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 701px) {
+  ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 901px) {
+  ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  font-size: 100px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 3px 6px aquamarine;
+}
+
+.loading p {
+  animation: blink 1s ease infinite;
+}
+
+.loading.on {
+  display: flex;
+}
+
+.loading.off {
+  display: none;
+}
